@@ -1,0 +1,26 @@
+name: Cleanup (30일 지난 데이터 삭제)
+
+on:
+  schedule:
+    # 매일 KST 03:17
+    - cron: '17 18 * * *'
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Cleanup old data
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: npm run cleanup
