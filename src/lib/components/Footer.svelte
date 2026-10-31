@@ -13,11 +13,6 @@
 				<li><a href="/faq">자주 묻는 질문</a></li>
 				<li><a href="/stats">통계</a></li>
 				<li><a href="/glossary">용어 사전</a></li>
-				<li>
-					<a href="https://match-point.courtnow.info/" target="_blank" rel="noopener noreferrer"
-						>매치포인트</a
-					>
-				</li>
 			</ul>
 		</div>
 
