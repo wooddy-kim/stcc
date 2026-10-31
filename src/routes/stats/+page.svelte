@@ -94,6 +94,19 @@
 		content="수도권 공공 테니스장의 시간대별, 요일별 예약 가용률 통계를 확인하세요. 예약하기 좋은 시간대를 찾아보세요."
 	/>
 	<link rel="canonical" href="https://courtnow.info/stats" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="예약 통계 | CourtNow" />
+	<meta property="og:description" content="수도권 공공 테니스장의 시간대별, 요일별 예약 가용률 통계를 확인하세요. 예약하기 좋은 시간대를 찾아보세요." />
+	<meta property="og:url" content="https://courtnow.info/stats" />
+	<meta property="og:site_name" content="CourtNow" />
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:image" content="https://courtnow.info/og-image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="예약 통계 | CourtNow" />
+	<meta name="twitter:description" content="수도권 공공 테니스장의 시간대별, 요일별 예약 가용률 통계를 확인하세요. 예약하기 좋은 시간대를 찾아보세요." />
+	<meta name="twitter:image" content="https://courtnow.info/og-image.png" />
 
 	<!-- Breadcrumb Schema -->
 	<script type="application/ld+json">

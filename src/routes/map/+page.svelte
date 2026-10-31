@@ -64,8 +64,22 @@
 </script>
 
 <svelte:head>
-	<title>지도 - CourtNow</title>
+	<title>테니스장 지도 | 수도권 공공 테니스장 예약 현황 - CourtNow</title>
 	<meta name="description" content="수도권 공공 테니스장 예약 가능 현황을 지도에서 확인하세요." />
+	<link rel="canonical" href="https://courtnow.info/map" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="테니스장 지도 | CourtNow" />
+	<meta property="og:description" content="수도권 공공 테니스장 예약 가능 현황을 지도에서 확인하세요." />
+	<meta property="og:url" content="https://courtnow.info/map" />
+	<meta property="og:site_name" content="CourtNow" />
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:image" content="https://courtnow.info/og-image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="테니스장 지도 | CourtNow" />
+	<meta name="twitter:description" content="수도권 공공 테니스장 예약 가능 현황을 지도에서 확인하세요." />
+	<meta name="twitter:image" content="https://courtnow.info/og-image.png" />
 </svelte:head>
 
 <div class="map-page">

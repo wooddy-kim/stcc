@@ -139,6 +139,19 @@
 		content="CourtNow 서비스 이용, 예약 현황 조회, 기술적 질문, 앱 설치 등에 대한 자주 묻는 질문과 답변"
 	/>
 	<link rel="canonical" href="https://courtnow.info/faq" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="자주 묻는 질문 (FAQ) - CourtNow" />
+	<meta property="og:description" content="CourtNow 서비스 이용, 예약 현황 조회, 기술적 질문, 앱 설치 등에 대한 자주 묻는 질문과 답변" />
+	<meta property="og:url" content="https://courtnow.info/faq" />
+	<meta property="og:site_name" content="CourtNow" />
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:image" content="https://courtnow.info/og-image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="자주 묻는 질문 (FAQ) - CourtNow" />
+	<meta name="twitter:description" content="CourtNow 서비스 이용, 예약 현황 조회, 기술적 질문, 앱 설치 등에 대한 자주 묻는 질문과 답변" />
+	<meta name="twitter:image" content="https://courtnow.info/og-image.png" />
 
 	<!-- FAQPage Schema -->
 	{@html `<script type="application/ld+json">

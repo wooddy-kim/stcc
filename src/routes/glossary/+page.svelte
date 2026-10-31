@@ -87,14 +87,20 @@
 		content="테니스 초보자를 위한 용어 사전입니다. 포핸드, 백핸드, 서브, 듀스 등 테니스 용어를 쉽게 찾아보세요."
 	/>
 	<link rel="canonical" href="https://courtnow.info/glossary" />
-
-	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
 	<meta property="og:title" content="테니스 용어 사전 | CourtNow" />
-	<meta
-		property="og:description"
-		content="테니스 초보자를 위한 용어 사전입니다. 포핸드, 백핸드, 서브, 듀스 등 테니스 용어를 쉽게 찾아보세요."
-	/>
+	<meta property="og:description" content="테니스 초보자를 위한 용어 사전입니다. 포핸드, 백핸드, 서브, 듀스 등 테니스 용어를 쉽게 찾아보세요." />
 	<meta property="og:url" content="https://courtnow.info/glossary" />
+	<meta property="og:site_name" content="CourtNow" />
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:image" content="https://courtnow.info/og-image.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="테니스 용어 사전 | CourtNow" />
+	<meta name="twitter:description" content="테니스 초보자를 위한 용어 사전입니다. 포핸드, 백핸드, 서브, 듀스 등 테니스 용어를 쉽게 찾아보세요." />
+	<meta name="twitter:image" content="https://courtnow.info/og-image.png" />
+
 
 	<!-- Breadcrumb Schema -->
 	<script type="application/ld+json">
