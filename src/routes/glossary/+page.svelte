@@ -11,6 +11,8 @@
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import PageWrapper from '$lib/components/layout/PageWrapper.svelte';
 	import PageHeader from '$lib/components/layout/PageHeader.svelte';
+	import AdSenseBanner from '$lib/components/ads/AdSenseBanner.svelte';
+	import { AD_SLOTS } from '$lib/config/ads';
 
 	let searchQuery = '';
 	let selectedCategory: GlossaryTerm['category'] | 'all' = 'all';
@@ -161,7 +163,7 @@
 
 	<!-- 용어 목록 -->
 	<div class="glossary-list">
-		{#each filteredTerms as term (term.id)}
+		{#each filteredTerms as term, i (term.id)}
 			<div
 				id="term-{term.id}"
 				class="glossary-item"
@@ -210,6 +212,12 @@
 					</div>
 				{/if}
 			</div>
+			<!-- 광고 사이 간격을 20개 용어로 둔다. 필터로 목록이 짧아지면 자연히 줄어든다 -->
+			{#if i === 9 && filteredTerms.length > 12}
+				<AdSenseBanner adSlot={AD_SLOTS.glossary.inList} variant="in-article" lazyLoad={true} minHeight="50px" />
+			{:else if i === 29 && filteredTerms.length > 32}
+				<AdSenseBanner adSlot={AD_SLOTS.glossary.inListLower} variant="multiplex" lazyLoad={true} minHeight="50px" />
+			{/if}
 		{/each}
 
 		{#if filteredTerms.length === 0}

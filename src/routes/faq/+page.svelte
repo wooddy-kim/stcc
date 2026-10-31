@@ -2,6 +2,8 @@
 	import PageHeader from '$lib/components/layout/PageHeader.svelte';
 	import PageWrapper from '$lib/components/layout/PageWrapper.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
+	import AdSenseBanner from '$lib/components/ads/AdSenseBanner.svelte';
+	import { AD_SLOTS } from '$lib/config/ads';
 
 	let openIndex: number | null = null;
 
@@ -246,6 +248,8 @@
 			{/each}
 		</div>
 	</Card>
+
+	<AdSenseBanner adSlot={AD_SLOTS.faq.afterList} variant="in-article" lazyLoad={true} minHeight="50px" />
 
 	<div class="contact-card-wrapper">
 		<Card padding="lg">
