@@ -177,8 +177,8 @@
 				<p>홈 화면에 추가하여 앱처럼 빠르게 접근하고, 오프라인에서도 사용할 수 있습니다.</p>
 			</div>
 			<div class="cta-buttons">
-				<a href="/pwa-ios-guide" class="cta-button">iOS 가이드</a>
-				<a href="/pwa-android-guide" class="cta-button">Android 가이드</a>
+				<a href="/pwa-guide?tab=ios" class="cta-button">iOS 가이드</a>
+				<a href="/pwa-guide?tab=android" class="cta-button">Android 가이드</a>
 			</div>
 		</div>
 	</section>

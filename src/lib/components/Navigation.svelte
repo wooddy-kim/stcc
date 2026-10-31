@@ -115,7 +115,7 @@
 					<span class="nav-text">매치포인트</span>
 				</a>
 
-				<a href="/pwa-ios-guide" class="cta-button" on:click={closeMobileMenu}> 앱 설치 </a>
+				<a href="/pwa-guide" class="cta-button" on:click={closeMobileMenu}> 앱 설치 </a>
 			</div>
 
 			<!-- Mobile Navigation -->
@@ -253,7 +253,7 @@
 					<span class="nav-text">매치포인트</span>
 				</a>
 
-				<a href="/pwa-ios-guide" class="cta-button" on:click={closeMobileMenu}> 앱 설치 </a>
+				<a href="/pwa-guide" class="cta-button" on:click={closeMobileMenu}> 앱 설치 </a>
 			</div>
 		</div>
 	</div>

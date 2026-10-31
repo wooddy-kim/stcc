@@ -22,8 +22,6 @@ export const GET: RequestHandler = async () => {
 		{ url: '/faq', priority: '0.7', changefreq: 'monthly' }, // FAQ page
 		{ url: '/contact', priority: '0.5', changefreq: 'yearly' },
 		{ url: '/pwa-guide', priority: '0.4', changefreq: 'yearly' }, // PWA installation guide
-		{ url: '/pwa-ios-guide', priority: '0.4', changefreq: 'yearly' },
-		{ url: '/pwa-android-guide', priority: '0.4', changefreq: 'yearly' },
 		{ url: '/terms', priority: '0.3', changefreq: 'yearly' },
 		{ url: '/privacy', priority: '0.3', changefreq: 'yearly' }
 	];
