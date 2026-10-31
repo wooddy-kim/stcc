@@ -1,0 +1,5 @@
+# Google AdSense
+# 아래 내용을 AdSense 대시보드에서 제공하는 정확한 내용으로 교체하세요
+# AdSense → 계정 → 계정 정보 → ads.txt 섹션 참조
+
+google.com, pub-6553137394733893, DIRECT, f08c47fec0942fa0

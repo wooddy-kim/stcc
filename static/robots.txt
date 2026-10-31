@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# 광고 테스트 페이지는 색인하지 않음
+Disallow: /test/
+
+# Sitemap
+Sitemap: https://courtnow.info/sitemap.xml

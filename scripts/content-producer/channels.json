@@ -1,0 +1,24 @@
+{
+  "channels": [
+    {
+      "id": "UC6yhHsR7edH-uQ62OaaG63Q",
+      "name": "스까치자",
+      "priority": 1
+    },
+		{
+			"id": "UCpuJpp-P5PbT2dXhDI_B0TA",
+			"name": "테니스의 기준",
+			"priority": 1
+		},
+		{
+			"id": "UC7Lsu90hbliCn9_Vkp7WtLw",
+			"name": "하늘쌤테니스꿀팁",
+			"priority": 2
+		},
+		{
+			"id": "UC37mMD9ds4Nny4uvhNz128w",
+			"name": "더블즈 테니스",
+			"priority": 2
+		}
+  ]
+}

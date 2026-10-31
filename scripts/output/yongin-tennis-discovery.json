@@ -1,0 +1,874 @@
+[
+  {
+    "listTitle": "(유료) 성복배수지 테니스장6코트_11월",
+    "facilityName": "(유료) 성복배수지 테니스장",
+    "facilityKey": "SEONGBOK",
+    "location": "수지구, 풍덕천1동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14789,
+        "courtNumber": "6"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "(유료) 성복배수지 테니스장6코트_10월",
+    "facilityName": "(유료) 성복배수지 테니스장",
+    "facilityKey": "SEONGBOK",
+    "location": "수지구, 풍덕천1동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14146,
+        "courtNumber": "6"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "(유료) 성복배수지테니스장 7코트_11월",
+    "facilityName": "(유료) 성복배수지테니스장",
+    "facilityKey": "SEONGBOK",
+    "location": "수지구, 풍덕천1동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14790,
+        "courtNumber": "7"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "(유료) 성복배수지테니스장 7코트_10월",
+    "facilityName": "(유료) 성복배수지테니스장",
+    "facilityKey": "SEONGBOK",
+    "location": "수지구, 풍덕천1동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14147,
+        "courtNumber": "7"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]공세동 테니스장_11월",
+    "facilityName": "공세동 테니스장",
+    "facilityKey": "GONGSEDONG",
+    "location": "기흥구, 기흥동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14923,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]공세동 테니스장_10월",
+    "facilityName": "공세동 테니스장",
+    "facilityKey": "GONGSEDONG",
+    "location": "기흥구, 기흥동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14330,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]기흥 테니스장(A코트)_11월",
+    "facilityName": "기흥 테니스장",
+    "facilityKey": "GIHEUNG",
+    "location": "기흥구, 영덕2동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14922,
+        "courtNumber": "A"
+      },
+      {
+        "apiCourtId": 14921,
+        "courtNumber": "B"
+      },
+      {
+        "apiCourtId": 14920,
+        "courtNumber": "D"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]기흥 테니스장(A코트)_10월",
+    "facilityName": "기흥 테니스장",
+    "facilityKey": "GIHEUNG",
+    "location": "기흥구, 영덕2동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14329,
+        "courtNumber": "A"
+      },
+      {
+        "apiCourtId": 14328,
+        "courtNumber": "B"
+      },
+      {
+        "apiCourtId": 14327,
+        "courtNumber": "D"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]남사 테니스장_11월",
+    "facilityName": "남사 테니스장",
+    "facilityKey": "NAMSA",
+    "location": "처인구, 남사읍",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14736,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]남사 테니스장_10월",
+    "facilityName": "남사 테니스장",
+    "facilityKey": "NAMSA",
+    "location": "처인구, 남사읍",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14476,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]남산근린공원 테니스장(A코트)_11월",
+    "facilityName": "남산근린공원 테니스장",
+    "facilityKey": "NAMSAN",
+    "location": "기흥구, 서농동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14919,
+        "courtNumber": "A"
+      },
+      {
+        "apiCourtId": 14918,
+        "courtNumber": "B"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]남산근린공원 테니스장(A코트)_10월",
+    "facilityName": "남산근린공원 테니스장",
+    "facilityKey": "NAMSAN",
+    "location": "기흥구, 서농동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14326,
+        "courtNumber": "A"
+      },
+      {
+        "apiCourtId": 14325,
+        "courtNumber": "B"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]동백산오름 테니스장(1코트)_11월",
+    "facilityName": "동백산오름 테니스장",
+    "facilityKey": "DONGBAEK",
+    "location": "기흥구, 동백1동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14917,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14916,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14915,
+        "courtNumber": "3"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]동백산오름 테니스장(1코트)_10월",
+    "facilityName": "동백산오름 테니스장",
+    "facilityKey": "DONGBAEK",
+    "location": "기흥구, 동백1동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14324,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14323,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14322,
+        "courtNumber": "3"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]둔전 테니스장(A코트)_11월",
+    "facilityName": "둔전 테니스장",
+    "facilityKey": "DUNJEON",
+    "location": "처인구, 포곡읍",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14735,
+        "courtNumber": "A"
+      },
+      {
+        "apiCourtId": 14734,
+        "courtNumber": "B"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]둔전 테니스장(A코트)_10월",
+    "facilityName": "둔전 테니스장",
+    "facilityKey": "DUNJEON",
+    "location": "처인구, 포곡읍",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14477,
+        "courtNumber": "A"
+      },
+      {
+        "apiCourtId": 14478,
+        "courtNumber": "B"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]모현레스피아 테니스장_11월",
+    "facilityName": "모현레스피아 테니스장",
+    "facilityKey": "MOHYUN",
+    "location": "처인구, 모현읍",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14733,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]모현레스피아 테니스장_10월",
+    "facilityName": "모현레스피아 테니스장",
+    "facilityKey": "MOHYUN",
+    "location": "처인구, 모현읍",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14479,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]백암 테니스장(1코트)_11월",
+    "facilityName": "백암 테니스장",
+    "facilityKey": "BAEGAM",
+    "location": "처인구, 백암면",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14732,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]백암 테니스장(1코트)_10월",
+    "facilityName": "백암 테니스장",
+    "facilityKey": "BAEGAM",
+    "location": "처인구, 백암면",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14480,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]성복배수지테니스장5코트_11월",
+    "facilityName": "성복배수지테니스장",
+    "facilityKey": "SEONGBOK",
+    "location": "수지구, 풍덕천1동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14788,
+        "courtNumber": "5"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]성복배수지테니스장5코트_10월",
+    "facilityName": "성복배수지테니스장",
+    "facilityKey": "SEONGBOK",
+    "location": "수지구, 풍덕천1동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14145,
+        "courtNumber": "5"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]수지체육공원테니스장B코트_11월",
+    "facilityName": "수지체육공원테니스장",
+    "facilityKey": "SUJI",
+    "location": "수지구, 풍덕천1동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14786,
+        "courtNumber": "B"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]수지체육공원테니스장B코트_10월",
+    "facilityName": "수지체육공원테니스장",
+    "facilityKey": "SUJI",
+    "location": "수지구, 풍덕천1동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14143,
+        "courtNumber": "B"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]시립실외 테니스장(4코트)_11월",
+    "facilityName": "시립실외 테니스장",
+    "facilityKey": "SILIB",
+    "location": "처인구, 남동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14731,
+        "courtNumber": "4"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]시립실외 테니스장(4코트)_10월",
+    "facilityName": "시립실외 테니스장",
+    "facilityKey": "SILIB",
+    "location": "처인구, 남동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14481,
+        "courtNumber": "4"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]신봉고가하부테니스장5코트_11월",
+    "facilityName": "신봉고가하부테니스장",
+    "facilityKey": "SINBONG",
+    "location": "수지구, 풍덕천1동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14787,
+        "courtNumber": "5"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]신봉고가하부테니스장5코트_10월",
+    "facilityName": "신봉고가하부테니스장",
+    "facilityKey": "SINBONG",
+    "location": "수지구, 풍덕천1동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14144,
+        "courtNumber": "5"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]신역동 테니스장(a.코트)_11월",
+    "facilityName": "신역동 테니스장",
+    "facilityKey": "SINYEOK",
+    "location": "기흥구, 신갈동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14912,
+        "courtNumber": "A"
+      },
+      {
+        "apiCourtId": 14911,
+        "courtNumber": "B"
+      },
+      {
+        "apiCourtId": 14910,
+        "courtNumber": "C"
+      },
+      {
+        "apiCourtId": 14909,
+        "courtNumber": "D"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]신역동 테니스장(a.코트)_10월",
+    "facilityName": "신역동 테니스장",
+    "facilityKey": "SINYEOK",
+    "location": "기흥구, 신갈동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14319,
+        "courtNumber": "A"
+      },
+      {
+        "apiCourtId": 14318,
+        "courtNumber": "B"
+      },
+      {
+        "apiCourtId": 14317,
+        "courtNumber": "C"
+      },
+      {
+        "apiCourtId": 14316,
+        "courtNumber": "D"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]아르피아 테니스장(1코트)_11월",
+    "facilityName": "아르피아 테니스장",
+    "facilityKey": "ARPIA",
+    "location": "수지구, 죽전2동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14883,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14884,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14885,
+        "courtNumber": "3"
+      },
+      {
+        "apiCourtId": 14886,
+        "courtNumber": "장애인"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]아르피아 테니스장(1코트)_10월",
+    "facilityName": "아르피아 테니스장",
+    "facilityKey": "ARPIA",
+    "location": "수지구, 죽전2동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14164,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14165,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14166,
+        "courtNumber": "3"
+      },
+      {
+        "apiCourtId": 14167,
+        "courtNumber": "장애인"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]양지근린공원 테니스장(1코트)_11월",
+    "facilityName": "양지근린공원 테니스장",
+    "facilityKey": "YANGJI",
+    "location": "처인구, 양지면",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14730,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14729,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14728,
+        "courtNumber": "3"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]양지근린공원 테니스장(1코트)_10월",
+    "facilityName": "양지근린공원 테니스장",
+    "facilityKey": "YANGJI",
+    "location": "처인구, 양지면",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14482,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14483,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14484,
+        "courtNumber": "3"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]용인시립골드 테니스장(1코트)_11월",
+    "facilityName": "용인시립골드 테니스장",
+    "facilityKey": "YONGIN",
+    "location": "기흥구, 기흥동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14908,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14907,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14906,
+        "courtNumber": "3"
+      },
+      {
+        "apiCourtId": 14905,
+        "courtNumber": "4"
+      },
+      {
+        "apiCourtId": 14904,
+        "courtNumber": "5"
+      },
+      {
+        "apiCourtId": 14903,
+        "courtNumber": "6"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]용인시립골드 테니스장(1코트)_10월",
+    "facilityName": "용인시립골드 테니스장",
+    "facilityKey": "YONGIN",
+    "location": "기흥구, 기흥동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14315,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14314,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14313,
+        "courtNumber": "3"
+      },
+      {
+        "apiCourtId": 14312,
+        "courtNumber": "4"
+      },
+      {
+        "apiCourtId": 14311,
+        "courtNumber": "5"
+      },
+      {
+        "apiCourtId": 14310,
+        "courtNumber": "6"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]원삼 테니스장_11월",
+    "facilityName": "원삼 테니스장",
+    "facilityKey": "WONSAN",
+    "location": "처인구, 원삼면",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14727,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]원삼 테니스장_10월",
+    "facilityName": "원삼 테니스장",
+    "facilityKey": "WONSAN",
+    "location": "처인구, 원삼면",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14485,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]원삼면 체육시설 테니스장(1코트)_11월",
+    "facilityName": "원삼면 체육시설 테니스장",
+    "facilityKey": "WONSAN_PUBLIC",
+    "location": "처인구, 원삼면",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14726,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14725,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14724,
+        "courtNumber": "3"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]원삼면 체육시설 테니스장(1코트)_10월",
+    "facilityName": "원삼면 체육시설 테니스장",
+    "facilityKey": "WONSAN_PUBLIC",
+    "location": "처인구, 원삼면",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14486,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14487,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14488,
+        "courtNumber": "3"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]포곡 테니스장_11월",
+    "facilityName": "포곡 테니스장",
+    "facilityKey": "POGOK",
+    "location": "처인구, 포곡읍",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14723,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]포곡 테니스장_10월",
+    "facilityName": "포곡 테니스장",
+    "facilityKey": "POGOK",
+    "location": "처인구, 포곡읍",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14489,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]포곡대교하부 테니스장B존(1코트)_11월",
+    "facilityName": "포곡대교하부 테니스장B존",
+    "facilityKey": "POGOK_B",
+    "location": "처인구, 포곡읍",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14722,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14721,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14720,
+        "courtNumber": "3"
+      },
+      {
+        "apiCourtId": 14719,
+        "courtNumber": "4"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]포곡대교하부 테니스장B존(1코트)_10월",
+    "facilityName": "포곡대교하부 테니스장B존",
+    "facilityKey": "POGOK_B",
+    "location": "처인구, 포곡읍",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14490,
+        "courtNumber": "1"
+      },
+      {
+        "apiCourtId": 14491,
+        "courtNumber": "2"
+      },
+      {
+        "apiCourtId": 14492,
+        "courtNumber": "3"
+      },
+      {
+        "apiCourtId": 14493,
+        "courtNumber": "4"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]포곡대교하부 테니스장D존(5코트)_11월",
+    "facilityName": "포곡대교하부 테니스장D존",
+    "facilityKey": "POGOK_D",
+    "location": "처인구, 포곡읍",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14718,
+        "courtNumber": "5"
+      },
+      {
+        "apiCourtId": 14717,
+        "courtNumber": "6"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "[유료]포곡대교하부 테니스장D존(5코트)_10월",
+    "facilityName": "포곡대교하부 테니스장D존",
+    "facilityKey": "POGOK_D",
+    "location": "처인구, 포곡읍",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14494,
+        "courtNumber": "5"
+      },
+      {
+        "apiCourtId": 14495,
+        "courtNumber": "6"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "배수지공원 다목적구장_11월",
+    "facilityName": "배수지공원 다목적구장",
+    "facilityKey": "JUKJEON",
+    "location": "수지구, 죽전1동",
+    "yearMonth": "2026-11",
+    "courts": [
+      {
+        "apiCourtId": 14794,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  },
+  {
+    "listTitle": "배수지공원 다목적구장_10월",
+    "facilityName": "배수지공원 다목적구장",
+    "facilityKey": "JUKJEON",
+    "location": "수지구, 죽전1동",
+    "yearMonth": "2026-10",
+    "courts": [
+      {
+        "apiCourtId": 14151,
+        "courtNumber": "1"
+      }
+    ],
+    "isNew": false
+  }
+]

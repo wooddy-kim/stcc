@@ -1,0 +1,31 @@
+name: Crawl API (용인·화성)
+
+# 망포(Playwright)는 Vercel /api/cron/crawl-mangpo에 남고, 여기서는 API 크롤러만 돈다.
+# 예약 실행(schedule)은 수동 실행으로 대상 사이트 접속을 확인한 뒤에 켠다.
+# cron-job.org의 crawl-api 잡과 동시에 돌면 용인 요청이 두 배가 되어 IP 차단 위험이 있다.
+on:
+  workflow_dispatch:
+
+# 용인 차단은 초당 요청 수 기준이라 두 회차가 겹치면 안 된다
+concurrency:
+  group: crawl-api
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Run crawlers
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: npm run crawl -- HWASEONG_API YONGIN_API

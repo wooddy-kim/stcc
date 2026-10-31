@@ -1,0 +1,688 @@
+[
+  {
+    "id": 255,
+    "facilityKey": "SEONGBOK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 12941,
+    "courtNumber": "6"
+  },
+  {
+    "id": 257,
+    "facilityKey": "SEONGBOK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 12942,
+    "courtNumber": "7"
+  },
+  {
+    "id": 259,
+    "facilityKey": "GONGSEDONG",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13247,
+    "courtNumber": "1"
+  },
+  {
+    "id": 261,
+    "facilityKey": "GIHEUNG",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13246,
+    "courtNumber": "A"
+  },
+  {
+    "id": 262,
+    "facilityKey": "GIHEUNG",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13245,
+    "courtNumber": "B"
+  },
+  {
+    "id": 263,
+    "facilityKey": "GIHEUNG",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13244,
+    "courtNumber": "D"
+  },
+  {
+    "id": 267,
+    "facilityKey": "NAMSA",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13125,
+    "courtNumber": "1"
+  },
+  {
+    "id": 269,
+    "facilityKey": "NAMSAN",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13243,
+    "courtNumber": "A"
+  },
+  {
+    "id": 270,
+    "facilityKey": "NAMSAN",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13242,
+    "courtNumber": "B"
+  },
+  {
+    "id": 273,
+    "facilityKey": "DONGBAEK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13241,
+    "courtNumber": "1"
+  },
+  {
+    "id": 274,
+    "facilityKey": "DONGBAEK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13240,
+    "courtNumber": "2"
+  },
+  {
+    "id": 275,
+    "facilityKey": "DONGBAEK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13239,
+    "courtNumber": "3"
+  },
+  {
+    "id": 276,
+    "facilityKey": "DONGBAEK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13238,
+    "courtNumber": "4"
+  },
+  {
+    "id": 277,
+    "facilityKey": "DONGBAEK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13237,
+    "courtNumber": "5"
+  },
+  {
+    "id": 283,
+    "facilityKey": "DUNJEON",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13126,
+    "courtNumber": "A"
+  },
+  {
+    "id": 284,
+    "facilityKey": "DUNJEON",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13127,
+    "courtNumber": "B"
+  },
+  {
+    "id": 287,
+    "facilityKey": "MOHYUN",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13128,
+    "courtNumber": "1"
+  },
+  {
+    "id": 289,
+    "facilityKey": "BAEGAM",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13129,
+    "courtNumber": "1"
+  },
+  {
+    "id": 291,
+    "facilityKey": "SEONGBOK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 12940,
+    "courtNumber": "5"
+  },
+  {
+    "id": 293,
+    "facilityKey": "SUJI",
+    "yearMonth": "2026-07",
+    "apiCourtId": 12938,
+    "courtNumber": "B"
+  },
+  {
+    "id": 295,
+    "facilityKey": "SILIB",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13130,
+    "courtNumber": "4"
+  },
+  {
+    "id": 297,
+    "facilityKey": "SINBONG",
+    "yearMonth": "2026-07",
+    "apiCourtId": 12939,
+    "courtNumber": "5"
+  },
+  {
+    "id": 299,
+    "facilityKey": "SINYEOK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13236,
+    "courtNumber": "A"
+  },
+  {
+    "id": 300,
+    "facilityKey": "SINYEOK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13235,
+    "courtNumber": "B"
+  },
+  {
+    "id": 301,
+    "facilityKey": "SINYEOK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13234,
+    "courtNumber": "C"
+  },
+  {
+    "id": 302,
+    "facilityKey": "SINYEOK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13233,
+    "courtNumber": "D"
+  },
+  {
+    "id": 307,
+    "facilityKey": "ARPIA",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13004,
+    "courtNumber": "1"
+  },
+  {
+    "id": 308,
+    "facilityKey": "ARPIA",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13005,
+    "courtNumber": "2"
+  },
+  {
+    "id": 309,
+    "facilityKey": "ARPIA",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13006,
+    "courtNumber": "3"
+  },
+  {
+    "id": 310,
+    "facilityKey": "ARPIA",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13007,
+    "courtNumber": "장애인"
+  },
+  {
+    "id": 315,
+    "facilityKey": "YANGJI",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13131,
+    "courtNumber": "1"
+  },
+  {
+    "id": 316,
+    "facilityKey": "YANGJI",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13132,
+    "courtNumber": "2"
+  },
+  {
+    "id": 317,
+    "facilityKey": "YANGJI",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13133,
+    "courtNumber": "3"
+  },
+  {
+    "id": 321,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13232,
+    "courtNumber": "1"
+  },
+  {
+    "id": 322,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13231,
+    "courtNumber": "2"
+  },
+  {
+    "id": 323,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13230,
+    "courtNumber": "3"
+  },
+  {
+    "id": 324,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13229,
+    "courtNumber": "4"
+  },
+  {
+    "id": 325,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13228,
+    "courtNumber": "5"
+  },
+  {
+    "id": 326,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13227,
+    "courtNumber": "6"
+  },
+  {
+    "id": 333,
+    "facilityKey": "WONSAN",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13134,
+    "courtNumber": "1"
+  },
+  {
+    "id": 335,
+    "facilityKey": "WONSAN_PUBLIC",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13135,
+    "courtNumber": "1"
+  },
+  {
+    "id": 336,
+    "facilityKey": "WONSAN_PUBLIC",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13136,
+    "courtNumber": "2"
+  },
+  {
+    "id": 337,
+    "facilityKey": "WONSAN_PUBLIC",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13137,
+    "courtNumber": "3"
+  },
+  {
+    "id": 341,
+    "facilityKey": "POGOK",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13138,
+    "courtNumber": "1"
+  },
+  {
+    "id": 343,
+    "facilityKey": "POGOK_B",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13139,
+    "courtNumber": "1"
+  },
+  {
+    "id": 344,
+    "facilityKey": "POGOK_B",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13140,
+    "courtNumber": "2"
+  },
+  {
+    "id": 345,
+    "facilityKey": "POGOK_B",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13141,
+    "courtNumber": "3"
+  },
+  {
+    "id": 346,
+    "facilityKey": "POGOK_B",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13142,
+    "courtNumber": "4"
+  },
+  {
+    "id": 351,
+    "facilityKey": "POGOK_D",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13143,
+    "courtNumber": "5"
+  },
+  {
+    "id": 352,
+    "facilityKey": "POGOK_D",
+    "yearMonth": "2026-07",
+    "apiCourtId": 13144,
+    "courtNumber": "6"
+  },
+  {
+    "id": 355,
+    "facilityKey": "SEONGBOK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13439,
+    "courtNumber": "6"
+  },
+  {
+    "id": 357,
+    "facilityKey": "SEONGBOK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13440,
+    "courtNumber": "7"
+  },
+  {
+    "id": 359,
+    "facilityKey": "GONGSEDONG",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13435,
+    "courtNumber": "1"
+  },
+  {
+    "id": 361,
+    "facilityKey": "GIHEUNG",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13434,
+    "courtNumber": "A"
+  },
+  {
+    "id": 362,
+    "facilityKey": "GIHEUNG",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13433,
+    "courtNumber": "B"
+  },
+  {
+    "id": 363,
+    "facilityKey": "GIHEUNG",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13432,
+    "courtNumber": "D"
+  },
+  {
+    "id": 367,
+    "facilityKey": "NAMSA",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13671,
+    "courtNumber": "1"
+  },
+  {
+    "id": 369,
+    "facilityKey": "NAMSAN",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13431,
+    "courtNumber": "A"
+  },
+  {
+    "id": 370,
+    "facilityKey": "NAMSAN",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13430,
+    "courtNumber": "B"
+  },
+  {
+    "id": 373,
+    "facilityKey": "DONGBAEK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13429,
+    "courtNumber": "1"
+  },
+  {
+    "id": 374,
+    "facilityKey": "DONGBAEK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13428,
+    "courtNumber": "2"
+  },
+  {
+    "id": 375,
+    "facilityKey": "DONGBAEK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13427,
+    "courtNumber": "3"
+  },
+  {
+    "id": 381,
+    "facilityKey": "DUNJEON",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13672,
+    "courtNumber": "A"
+  },
+  {
+    "id": 382,
+    "facilityKey": "DUNJEON",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13673,
+    "courtNumber": "B"
+  },
+  {
+    "id": 385,
+    "facilityKey": "MOHYUN",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13674,
+    "courtNumber": "1"
+  },
+  {
+    "id": 387,
+    "facilityKey": "BAEGAM",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13675,
+    "courtNumber": "1"
+  },
+  {
+    "id": 389,
+    "facilityKey": "SEONGBOK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13438,
+    "courtNumber": "5"
+  },
+  {
+    "id": 391,
+    "facilityKey": "SUJI",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13436,
+    "courtNumber": "B"
+  },
+  {
+    "id": 393,
+    "facilityKey": "SILIB",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13676,
+    "courtNumber": "4"
+  },
+  {
+    "id": 395,
+    "facilityKey": "SINBONG",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13437,
+    "courtNumber": "5"
+  },
+  {
+    "id": 397,
+    "facilityKey": "SINYEOK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13424,
+    "courtNumber": "A"
+  },
+  {
+    "id": 398,
+    "facilityKey": "SINYEOK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13423,
+    "courtNumber": "B"
+  },
+  {
+    "id": 399,
+    "facilityKey": "SINYEOK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13422,
+    "courtNumber": "C"
+  },
+  {
+    "id": 400,
+    "facilityKey": "SINYEOK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13421,
+    "courtNumber": "D"
+  },
+  {
+    "id": 405,
+    "facilityKey": "ARPIA",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13507,
+    "courtNumber": "1"
+  },
+  {
+    "id": 406,
+    "facilityKey": "ARPIA",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13508,
+    "courtNumber": "2"
+  },
+  {
+    "id": 407,
+    "facilityKey": "ARPIA",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13509,
+    "courtNumber": "3"
+  },
+  {
+    "id": 408,
+    "facilityKey": "ARPIA",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13510,
+    "courtNumber": "장애인"
+  },
+  {
+    "id": 413,
+    "facilityKey": "YANGJI",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13677,
+    "courtNumber": "1"
+  },
+  {
+    "id": 414,
+    "facilityKey": "YANGJI",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13678,
+    "courtNumber": "2"
+  },
+  {
+    "id": 415,
+    "facilityKey": "YANGJI",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13679,
+    "courtNumber": "3"
+  },
+  {
+    "id": 419,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13420,
+    "courtNumber": "1"
+  },
+  {
+    "id": 420,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13419,
+    "courtNumber": "2"
+  },
+  {
+    "id": 421,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13418,
+    "courtNumber": "3"
+  },
+  {
+    "id": 422,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13417,
+    "courtNumber": "4"
+  },
+  {
+    "id": 423,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13416,
+    "courtNumber": "5"
+  },
+  {
+    "id": 424,
+    "facilityKey": "YONGIN",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13415,
+    "courtNumber": "6"
+  },
+  {
+    "id": 431,
+    "facilityKey": "WONSAN",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13680,
+    "courtNumber": "1"
+  },
+  {
+    "id": 433,
+    "facilityKey": "WONSAN_PUBLIC",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13681,
+    "courtNumber": "1"
+  },
+  {
+    "id": 434,
+    "facilityKey": "WONSAN_PUBLIC",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13682,
+    "courtNumber": "2"
+  },
+  {
+    "id": 435,
+    "facilityKey": "WONSAN_PUBLIC",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13683,
+    "courtNumber": "3"
+  },
+  {
+    "id": 439,
+    "facilityKey": "POGOK",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13684,
+    "courtNumber": "1"
+  },
+  {
+    "id": 441,
+    "facilityKey": "POGOK_B",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13685,
+    "courtNumber": "1"
+  },
+  {
+    "id": 442,
+    "facilityKey": "POGOK_B",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13686,
+    "courtNumber": "2"
+  },
+  {
+    "id": 443,
+    "facilityKey": "POGOK_B",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13687,
+    "courtNumber": "3"
+  },
+  {
+    "id": 444,
+    "facilityKey": "POGOK_B",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13688,
+    "courtNumber": "4"
+  },
+  {
+    "id": 449,
+    "facilityKey": "POGOK_D",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13689,
+    "courtNumber": "5"
+  },
+  {
+    "id": 450,
+    "facilityKey": "POGOK_D",
+    "yearMonth": "2026-08",
+    "apiCourtId": 13690,
+    "courtNumber": "6"
+  }
+]

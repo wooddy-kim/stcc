@@ -1,0 +1,15 @@
+node_modules
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.vscode
+.idea
+coverage
+.nyc_output
+dist
+build
+scripts/
+*.test.ts
+*.spec.ts

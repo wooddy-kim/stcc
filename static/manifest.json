@@ -1,0 +1,27 @@
+{
+  "short_name": "CourtNow",
+  "name": "CourtNow - 공공 테니스장 예약 현황",
+  "description": "수도권 공공 테니스장 예약 현황을 제공하는 애플리케이션",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981"
+}

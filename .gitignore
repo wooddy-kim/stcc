@@ -1,0 +1,28 @@
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+logs
+*.log
+.idea
+.vercel
+*.local
+.env*.local
+
+# PM2 프로세스 파일 및 로그
+.pm2/
+pids/
+/.omc/
+
+.superpowers/
+
+# Claude Code 작업 파일 (로컬 전용)
+CLAUDE.md
+.claude/
+docs/superpowers/
