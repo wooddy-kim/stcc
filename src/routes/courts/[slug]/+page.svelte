@@ -16,6 +16,9 @@
 	// Breadcrumb items
 	const breadcrumbItems = [
 		{ label: '예약 현황', href: '/' },
+		...(court.regionCode && court.regionName
+			? [{ label: court.regionName, href: `/regions/${court.regionCode.toLowerCase()}` }]
+			: []),
 		{ label: court.name }
 	];
 
@@ -69,9 +72,10 @@
 			address: court.address
 				? {
 						'@type': 'PostalAddress',
-						addressLocality: court.regionName ||
-									 court.address?.split(' ').find(part => part.endsWith('시')) ||
-									 '경기도',
+						addressLocality:
+							court.regionName ||
+							court.address?.split(' ').find((part) => part.endsWith('시')) ||
+							'경기도',
 						addressRegion: '경기도',
 						addressCountry: 'KR',
 						streetAddress: court.address
@@ -86,20 +90,12 @@
 		${JSON.stringify({
 			'@context': 'https://schema.org',
 			'@type': 'BreadcrumbList',
-			itemListElement: [
-				{
-					'@type': 'ListItem',
-					position: 1,
-					name: '예약 현황',
-					item: 'https://courtnow.info'
-				},
-				{
-					'@type': 'ListItem',
-					position: 2,
-					name: court.name,
-					item: canonicalUrl
-				}
-			]
+			itemListElement: breadcrumbItems.map((b, i) => ({
+				'@type': 'ListItem',
+				position: i + 1,
+				name: b.label,
+				item: b.href ? `https://courtnow.info${b.href === '/' ? '' : b.href}` : canonicalUrl
+			}))
 		})}
 	<\/script>`}
 </svelte:head>
@@ -120,7 +116,12 @@
 	<CourtTimetable courtId={court.id} />
 
 	<!-- 1. 히어로 아래 (Lazy Load) -->
-	<AdSenseBanner adSlot={AD_SLOTS.courtDetail.afterHero} variant="in-article" minHeight="50px" lazyLoad={true} />
+	<AdSenseBanner
+		adSlot={AD_SLOTS.courtDetail.afterHero}
+		variant="in-article"
+		minHeight="50px"
+		lazyLoad={true}
+	/>
 
 	<!-- Info Cards Grid -->
 	<div class="info-grid">
@@ -142,7 +143,7 @@
 		</CourtInfoCard>
 
 		{#if court.operatingPolicy}
-			<CourtInfoCard title="운영 방침" icon="📋" >
+			<CourtInfoCard title="운영 방침" icon="📋">
 				<SanitizedHtml html={court.operatingPolicy} />
 			</CourtInfoCard>
 		{/if}
@@ -239,7 +240,6 @@
 			gap: var(--space-4);
 			margin-bottom: var(--space-8);
 		}
-
 	}
 
 	@media (max-width: 640px) {

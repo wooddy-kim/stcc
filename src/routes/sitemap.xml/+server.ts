@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import { db } from '$lib/server/db/client';
-import { courts, tips } from '$lib/server/db/schema';
+import { courts, regions, tips } from '$lib/server/db/schema';
 import { eq } from 'drizzle-orm';
 
 const site = 'https://courtnow.info';
@@ -27,21 +27,38 @@ export const GET: RequestHandler = async () => {
 	];
 
 	// Fetch court pages from database
-	let courtPages: Array<{ url: string; priority: string; changefreq: string; lastmod?: string }> =
+	const courtPages: Array<{ url: string; priority: string; changefreq: string; lastmod?: string }> =
 		[];
 	try {
 		const courtsData = await db
-			.select({ slug: courts.slug })
+			.select({ slug: courts.slug, regionCode: regions.code })
 			.from(courts)
+			.leftJoin(regions, eq(courts.regionId, regions.id))
 			.where(eq(courts.isActive, true));
 
-		courtPages = courtsData
-			.filter((court) => court.slug) // Only include courts with slug
-			.map((court) => ({
-				url: `/courts/${court.slug}`,
-				priority: '0.9', // Very high priority for court detail pages
-				changefreq: 'weekly'
-			}));
+		// 시 단위 페이지 — 슬러그 있는 활성 코트가 하나라도 있는 지역만 (/regions/[code]가 404를 내지 않는 조건과 같다)
+		const regionCodes = new Set(
+			courtsData
+				.filter((c) => c.slug && c.regionCode)
+				.map((c) => (c.regionCode as string).toLowerCase())
+		);
+		courtPages.push(
+			...[...regionCodes].map((code) => ({
+				url: `/regions/${code}`,
+				priority: '0.9',
+				changefreq: 'daily'
+			}))
+		);
+
+		courtPages.push(
+			...courtsData
+				.filter((court) => court.slug) // Only include courts with slug
+				.map((court) => ({
+					url: `/courts/${court.slug}`,
+					priority: '0.9', // Very high priority for court detail pages
+					changefreq: 'weekly'
+				}))
+		);
 	} catch (error) {
 		console.error('Failed to fetch courts for sitemap:', error);
 	}

@@ -4,6 +4,7 @@
 		name: string;
 		slug: string | null;
 		regionName: string | null;
+		regionCode?: string | null;
 	}
 
 	/**
@@ -16,12 +17,27 @@
 	export let courts: CourtLink[] = [];
 
 	$: linkable = courts.filter((c) => c.slug);
+	// 시 단위 페이지(/regions/[code])로 가는 anchor. 코트 목록에서 뽑아 지역이 늘어도 자동 반영된다.
+	$: regionLinks = [
+		...new Map(
+			linkable
+				.filter((c) => c.regionCode && c.regionName)
+				.map((c) => [(c.regionCode as string).toLowerCase(), c.regionName as string])
+		)
+	];
 </script>
 
 {#if linkable.length > 0}
 	<section class="court-index" aria-labelledby="court-index-title">
 		<h2 id="court-index-title" class="court-index-title">수도권 공공 테니스장 전체 목록</h2>
 		<p class="court-index-sub">코트별 운영 방침·요금·주차·교통 정보를 확인하세요</p>
+		{#if regionLinks.length > 0}
+			<ul class="court-index-regions" aria-label="지역별 테니스장">
+				{#each regionLinks as [code, name] (code)}
+					<li><a href="/regions/{code}">{name} 테니스장</a></li>
+				{/each}
+			</ul>
+		{/if}
 		<ul class="court-index-list">
 			{#each linkable as court (court.id)}
 				<li>
@@ -97,6 +113,26 @@
 		flex-shrink: 0;
 		font-size: 0.6875rem;
 		color: var(--color-text-tertiary, #9ca3af);
+	}
+
+	.court-index-regions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.375rem;
+		margin: 0 0 var(--space-3, 0.75rem);
+		padding: 0;
+		list-style: none;
+	}
+
+	.court-index-regions a {
+		display: inline-block;
+		padding: 0.25rem 0.625rem;
+		border: 1px solid var(--color-border-light, #e5e7eb);
+		border-radius: 999px;
+		background: #ffffff;
+		font-size: 0.75rem;
+		color: var(--color-text-primary, #111827);
+		text-decoration: none;
 	}
 
 	@media (max-width: 480px) {
