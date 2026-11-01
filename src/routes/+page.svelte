@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import type { PageData } from './$types';
 	import TimeFirstBoard from '$lib/components/TimeFirstBoard.svelte';
 	import ContentGatewayMulti from '$lib/components/ContentGatewayMulti.svelte';
@@ -105,7 +106,12 @@
 			breakpoint={768}
 		/>
 
-		<TimeFirstBoard courts={data.courts} regions={data.regions} lastDay={data.lastDay} />
+		<TimeFirstBoard
+			courts={data.courts}
+			regions={data.regions}
+			lastDay={data.lastDay}
+			initialRegion={$page.url.searchParams.get('region')}
+		/>
 
 		<!-- 지도 게이트웨이 -->
 		<a href="/map" class="gateway">

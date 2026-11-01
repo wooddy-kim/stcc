@@ -44,6 +44,8 @@
 	export let regions: RegionEntry[] = [];
 	/** 수집된 데이터가 있는 마지막 날짜. 없으면 MAX_DAYS_AHEAD까지. */
 	export let lastDay: string | null = null;
+	/** ?region= 로 들어오면 그 시를 선택한 채로 연다 (시 단위 페이지·홍보 링크). 대소문자 무시. */
+	export let initialRegion: string | null = null;
 
 	const WEEKDAYS = ['일', '월', '화', '수', '목', '금', '토'];
 	/** 막대(6~22시 16칸)에서 칩 H가 덮는 두 칸 [H, H+2)의 시작 위치(%). 버튼 폭은 두 칸. */
@@ -51,7 +53,8 @@
 	/** 기상청 단기예보가 닿는 날까지만 날씨 버튼을 보인다 */
 	const WEATHER_DAYS = 2;
 
-	let region = 'all';
+	let region =
+		regions.find((r) => r.code.toLowerCase() === initialRegion?.toLowerCase())?.code ?? 'all';
 	let now: KstNow | null = null;
 	let date = '';
 	let hour: number = CHIP_HOURS[0];

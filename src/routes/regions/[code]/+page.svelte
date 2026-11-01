@@ -52,7 +52,7 @@
 
 	<PageHeader title={seo.heading} description={seo.description} size="md" />
 
-	<a href="/" class="region-cta">시간대별로 오늘 빈 코트 보기 →</a>
+	<a href="/?region={region.code}" class="region-cta">시간대별로 오늘 빈 코트 보기 →</a>
 
 	<ul class="region-courts">
 		{#each courts as court (court.id)}
