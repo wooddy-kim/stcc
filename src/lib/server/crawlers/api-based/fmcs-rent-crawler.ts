@@ -4,7 +4,8 @@ import type { FmcsTimeSlot } from './types';
 
 /**
  * SPOWISE FMCS 대관 API 크롤러 (군포도시공사)
- * facilityKey = '{comcd}-{part_cd}' (예: 'GUNPO02-14'), court_api_mappings.apiCourtId = place_cd
+ * facilityKey = '{comcd}-{part_cd}[-{접미사}]' (예: 'GUNPO02-14', 'UUC02-15-NAESON'), court_api_mappings.apiCourtId = place_cd
+ * 접미사는 한 part를 여러 테니스장으로 나눌 때 키를 구분하는 용도로, 요청에는 쓰지 않는다.
  * 고정 ID + 코트별 월 단위 조회라 화성 크롤러 흐름을 그대로 쓰고 요청·파싱만 바꾼다.
  */
 export abstract class FmcsRentBaseCrawler extends HwaseongBaseCrawler {
