@@ -11,11 +11,19 @@ import { eq } from 'drizzle-orm';
 import { YonginBaseCrawler } from './api-based/yongin-base-crawler.js';
 import { HwaseongBaseCrawler } from './api-based/hwaseong-base-crawler.js';
 import { FmcsRentBaseCrawler } from './api-based/fmcs-rent-crawler.js';
+import { NamyangjuBaseCrawler } from './api-based/namyangju-crawler.js';
+import { AnsanBaseCrawler } from './api-based/ansan-crawler.js';
 import { MangpoCrawler } from './mangpo-crawler.js';
 import type { BaseCrawler } from './base-crawler.js';
 import type { YonginFacilityConfig, HwaseongFacilityConfig } from './api-based/types.js';
 
-export type CrawlerType = 'PLAYWRIGHT' | 'YONGIN_API' | 'HWASEONG_API' | 'FMCS_RENT_API';
+export type CrawlerType =
+	| 'PLAYWRIGHT'
+	| 'YONGIN_API'
+	| 'HWASEONG_API'
+	| 'FMCS_RENT_API'
+	| 'NAMYANGJU_API'
+	| 'ANSAN_API';
 
 // TODO: 강남구(FMCS_API) 크롤러 미구현 — 추후 개발 예정.
 // regions/courts/court_api_mappings에는 이미 등록되어 있으나(GNCC05, GNCC06)
@@ -33,6 +41,16 @@ const PLAYWRIGHT_CRAWLER_REGISTRY: Record<string, new () => BaseCrawler> = {
 class DynamicYonginCrawler extends YonginBaseCrawler {}
 class DynamicHwaseongCrawler extends HwaseongBaseCrawler {}
 class DynamicFmcsRentCrawler extends FmcsRentBaseCrawler {}
+class DynamicNamyangjuCrawler extends NamyangjuBaseCrawler {}
+class DynamicAnsanCrawler extends AnsanBaseCrawler {}
+
+// 고정 ID + 월 단위 조회 계열: HwaseongFacilityConfig 하나로 생성한다
+const STATIC_ID_CRAWLERS: Record<string, new (config: HwaseongFacilityConfig) => BaseCrawler> = {
+	HWASEONG_API: DynamicHwaseongCrawler,
+	FMCS_RENT_API: DynamicFmcsRentCrawler,
+	NAMYANGJU_API: DynamicNamyangjuCrawler,
+	ANSAN_API: DynamicAnsanCrawler
+};
 
 function groupBy<T>(arr: T[], keyFn: (item: T) => string): Record<string, T[]> {
 	return arr.reduce(
@@ -89,7 +107,9 @@ export async function buildCrawlersFromDb(filterTypes?: CrawlerType[]): Promise<
 			}
 
 			case 'HWASEONG_API':
-			case 'FMCS_RENT_API': {
+			case 'FMCS_RENT_API':
+			case 'NAMYANGJU_API':
+			case 'ANSAN_API': {
 				if (!region.apiUrl) {
 					console.warn(`[Factory] ${crawlerType} region '${region.code}' has no apiUrl, skipping`);
 					break;
@@ -105,11 +125,7 @@ export async function buildCrawlersFromDb(filterTypes?: CrawlerType[]): Promise<
 						apiUrl: region.apiUrl,
 						monthsToFetch: region.monthsToFetch ?? 2
 					};
-					crawlers.push(
-						crawlerType === 'FMCS_RENT_API'
-							? new DynamicFmcsRentCrawler(config)
-							: new DynamicHwaseongCrawler(config)
-					);
+					crawlers.push(new STATIC_ID_CRAWLERS[crawlerType](config));
 				}
 				break;
 			}

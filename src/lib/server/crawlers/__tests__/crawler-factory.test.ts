@@ -34,6 +34,14 @@ vi.mock('../../db/client', () => {
 			apiUrl: 'http://g',
 			monthsToFetch: 2,
 			batchSize: 10
+		},
+		{
+			id: 5,
+			code: 'ANSAN',
+			crawlerType: 'ANSAN_API',
+			apiUrl: 'http://a',
+			monthsToFetch: 2,
+			batchSize: 10
 		}
 	];
 	const courtRows = [
@@ -68,6 +76,14 @@ vi.mock('../../db/client', () => {
 			isActive: true,
 			name: '시민',
 			courtSortMode: 'numeric'
+		},
+		{
+			id: 50,
+			regionId: 5,
+			facilityKey: 'ANSAN-87',
+			isActive: true,
+			name: '각골',
+			courtSortMode: 'numeric'
 		}
 	];
 	return {
@@ -87,9 +103,14 @@ vi.mock('../../db/client', () => {
 import { buildCrawlersFromDb } from '../crawler-factory';
 
 describe('buildCrawlersFromDb filterTypes', () => {
-	it('필터 없으면 전체(4개) 크롤러 생성', async () => {
+	it('필터 없으면 전체(5개) 크롤러 생성', async () => {
 		const crawlers = await buildCrawlersFromDb();
-		expect(crawlers.length).toBe(4);
+		expect(crawlers.length).toBe(5);
+	});
+
+	it("['ANSAN_API'] 필터 시 안산 크롤러 1개만", async () => {
+		const crawlers = await buildCrawlersFromDb(['ANSAN_API']);
+		expect(crawlers.map((c) => c.getCrawlerName())).toEqual(['ANSAN-87Crawler']);
 	});
 
 	it("['FMCS_RENT_API'] 필터 시 군포 크롤러 1개만", async () => {

@@ -33,7 +33,7 @@ export const GET: RequestHandler = async ({ request, url }) => {
 	// 동시에 두 번 부르면 저장이 병렬이 되어 커넥션 1개(max:1)에서 영구히 멈춘다.
 	// 화성·군포가 먼저 끝나 저장까지 마치고, 그 뒤 용인이 돈다(최대 180초).
 	const work = (async () => {
-		await runCrawl({ types: ['HWASEONG_API', 'FMCS_RENT_API'] });
+		await runCrawl({ types: ['HWASEONG_API', 'FMCS_RENT_API', 'NAMYANGJU_API', 'ANSAN_API'] });
 		await runCrawl({ types: ['YONGIN_API'], group: yonginGroup });
 	})().catch((err) => {
 		console.error('[cron/crawl-api] 백그라운드 크롤링 실패:', err);
