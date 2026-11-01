@@ -26,6 +26,14 @@ vi.mock('../../db/client', () => {
 			apiUrl: 'http://h',
 			monthsToFetch: 2,
 			batchSize: 10
+		},
+		{
+			id: 4,
+			code: 'GUNPO',
+			crawlerType: 'FMCS_RENT_API',
+			apiUrl: 'http://g',
+			monthsToFetch: 2,
+			batchSize: 10
 		}
 	];
 	const courtRows = [
@@ -52,6 +60,14 @@ vi.mock('../../db/client', () => {
 			isActive: true,
 			name: '여울',
 			courtSortMode: 'numeric'
+		},
+		{
+			id: 40,
+			regionId: 4,
+			facilityKey: 'GUNPO02-14',
+			isActive: true,
+			name: '시민',
+			courtSortMode: 'numeric'
 		}
 	];
 	return {
@@ -71,9 +87,14 @@ vi.mock('../../db/client', () => {
 import { buildCrawlersFromDb } from '../crawler-factory';
 
 describe('buildCrawlersFromDb filterTypes', () => {
-	it('필터 없으면 전체(3개) 크롤러 생성', async () => {
+	it('필터 없으면 전체(4개) 크롤러 생성', async () => {
 		const crawlers = await buildCrawlersFromDb();
-		expect(crawlers.length).toBe(3);
+		expect(crawlers.length).toBe(4);
+	});
+
+	it("['FMCS_RENT_API'] 필터 시 군포 크롤러 1개만", async () => {
+		const crawlers = await buildCrawlersFromDb(['FMCS_RENT_API']);
+		expect(crawlers.map((c) => c.getCrawlerName())).toEqual(['GUNPO02-14Crawler']);
 	});
 
 	it("['YONGIN_API'] 필터 시 용인 크롤러 1개만", async () => {

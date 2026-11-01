@@ -103,23 +103,9 @@ export abstract class HwaseongBaseCrawler extends ApiBaseCrawler {
 				const timeoutId = setTimeout(() => controller.abort(), timeout);
 
 				try {
-					const response = await fetch(this.config.apiUrl, {
-						method: 'POST',
-						headers: {
-							'Content-Type': 'application/x-www-form-urlencoded'
-						},
-						body: `stadiumIdx=${stadiumIdx}&searchYear=${year}&searchMonth=${String(month).padStart(2, '0')}`,
-						signal: controller.signal
-					});
-
+					const result = await this.requestCourtMonth(stadiumIdx, year, month, controller.signal);
 					clearTimeout(timeoutId);
-
-					if (!response.ok) {
-						throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-					}
-
-					const data: HwaseongApiResponse = await response.json();
-					return this.parseApiResponse(data, stadiumIdx);
+					return result;
 				} catch (fetchError) {
 					clearTimeout(timeoutId);
 					throw fetchError;
@@ -144,6 +130,32 @@ export abstract class HwaseongBaseCrawler extends ApiBaseCrawler {
 		}
 
 		return [];
+	}
+
+	/**
+	 * 코트 1면의 한 달치 요청 + 파싱. 같은 고정 ID 구조의 다른 API는 이것만 override한다.
+	 */
+	protected async requestCourtMonth(
+		stadiumIdx: number,
+		year: number,
+		month: number,
+		signal: AbortSignal
+	): Promise<RawReservation[]> {
+		const response = await fetch(this.config.apiUrl, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
+			body: `stadiumIdx=${stadiumIdx}&searchYear=${year}&searchMonth=${String(month).padStart(2, '0')}`,
+			signal
+		});
+
+		if (!response.ok) {
+			throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+		}
+
+		const data: HwaseongApiResponse = await response.json();
+		return this.parseApiResponse(data, stadiumIdx);
 	}
 
 	/**

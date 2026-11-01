@@ -16,7 +16,7 @@ export const regions = pgTable('regions', {
 	id: serial('id').primaryKey(),
 	code: varchar('code', { length: 50 }).notNull().unique(),
 	name: varchar('name', { length: 100 }).notNull(),
-	// 크롤러 타입: 'PLAYWRIGHT' | 'YONGIN_API' | 'HWASEONG_API'
+	// 크롤러 타입: 'PLAYWRIGHT' | 'YONGIN_API' | 'HWASEONG_API' | 'FMCS_RENT_API'
 	crawlerType: varchar('crawler_type', { length: 20 }).default('PLAYWRIGHT'),
 	apiUrl: text('api_url'), // API 크롤러 엔드포인트 (PLAYWRIGHT는 NULL)
 	monthsToFetch: integer('months_to_fetch').default(2),

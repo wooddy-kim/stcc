@@ -16,7 +16,7 @@ const DEFAULT_YONGIN_GROUPS = 2;
  * 시설을 돌면 크롤 데드라인을 넘기므로, 크론을 시각을 달리해 두 번 호출하고 회차마다
  * 절반씩 맡는다: `?group=0`, `?group=1`.
  *
- * 화성은 제약이 없고 68요청이면 끝나므로 매 회차 전부 돈다. group을 안 주면
+ * 화성·군포는 제약이 없고 합쳐 100요청 안쪽이라 매 회차 전부 돈다. group을 안 주면
  * (CLI·수동 실행) 예전처럼 전부 돈다.
  */
 export const GET: RequestHandler = async ({ request, url }) => {
@@ -31,9 +31,9 @@ export const GET: RequestHandler = async ({ request, url }) => {
 
 	// 반드시 순차로 돈다. runCrawl은 저장 직렬화 limiter를 호출마다 새로 만들므로,
 	// 동시에 두 번 부르면 저장이 병렬이 되어 커넥션 1개(max:1)에서 영구히 멈춘다.
-	// 화성이 10초쯤에 먼저 끝나 저장까지 마치고, 그 뒤 용인이 돈다(최대 180초).
+	// 화성·군포가 먼저 끝나 저장까지 마치고, 그 뒤 용인이 돈다(최대 180초).
 	const work = (async () => {
-		await runCrawl({ types: ['HWASEONG_API'] });
+		await runCrawl({ types: ['HWASEONG_API', 'FMCS_RENT_API'] });
 		await runCrawl({ types: ['YONGIN_API'], group: yonginGroup });
 	})().catch((err) => {
 		console.error('[cron/crawl-api] 백그라운드 크롤링 실패:', err);

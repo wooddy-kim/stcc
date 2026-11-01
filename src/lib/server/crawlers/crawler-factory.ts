@@ -10,14 +10,15 @@ import { regions, courts } from '../db/schema.js';
 import { eq } from 'drizzle-orm';
 import { YonginBaseCrawler } from './api-based/yongin-base-crawler.js';
 import { HwaseongBaseCrawler } from './api-based/hwaseong-base-crawler.js';
+import { FmcsRentBaseCrawler } from './api-based/fmcs-rent-crawler.js';
 import { MangpoCrawler } from './mangpo-crawler.js';
 import type { BaseCrawler } from './base-crawler.js';
 import type { YonginFacilityConfig, HwaseongFacilityConfig } from './api-based/types.js';
 
-export type CrawlerType = 'PLAYWRIGHT' | 'YONGIN_API' | 'HWASEONG_API';
+export type CrawlerType = 'PLAYWRIGHT' | 'YONGIN_API' | 'HWASEONG_API' | 'FMCS_RENT_API';
 
-// TODO: 강남구(FMCS_API) · 군포시(FMCS_RENT_API) 크롤러 미구현 — 추후 개발 예정.
-// regions/courts/court_api_mappings에는 이미 등록되어 있으나(GNCC05, GNCC06, GUNPO02, GUNPO03)
+// TODO: 강남구(FMCS_API) 크롤러 미구현 — 추후 개발 예정.
+// regions/courts/court_api_mappings에는 이미 등록되어 있으나(GNCC05, GNCC06)
 // 아래 switch에 case가 없어 default(PLAYWRIGHT) 분기로 떨어지고,
 // PLAYWRIGHT_CRAWLER_REGISTRY 조회 실패 경고만 남긴 채 건너뛴다. 데이터는 수집되지 않는다.
 // 구현 시: ApiBaseCrawler 상속 크롤러 작성 → CrawlerType에 타입 추가 → switch case 추가.
@@ -31,6 +32,7 @@ const PLAYWRIGHT_CRAWLER_REGISTRY: Record<string, new () => BaseCrawler> = {
 // 추상 클래스의 구체적인 서브클래스 (팩토리 전용)
 class DynamicYonginCrawler extends YonginBaseCrawler {}
 class DynamicHwaseongCrawler extends HwaseongBaseCrawler {}
+class DynamicFmcsRentCrawler extends FmcsRentBaseCrawler {}
 
 function groupBy<T>(arr: T[], keyFn: (item: T) => string): Record<string, T[]> {
 	return arr.reduce(
@@ -86,9 +88,10 @@ export async function buildCrawlersFromDb(filterTypes?: CrawlerType[]): Promise<
 				break;
 			}
 
-			case 'HWASEONG_API': {
+			case 'HWASEONG_API':
+			case 'FMCS_RENT_API': {
 				if (!region.apiUrl) {
-					console.warn(`[Factory] HWASEONG region '${region.code}' has no apiUrl, skipping`);
+					console.warn(`[Factory] ${crawlerType} region '${region.code}' has no apiUrl, skipping`);
 					break;
 				}
 				// facilityKey별로 그룹화 → facilityKey 1개 = 크롤러 1개
@@ -102,14 +105,18 @@ export async function buildCrawlersFromDb(filterTypes?: CrawlerType[]): Promise<
 						apiUrl: region.apiUrl,
 						monthsToFetch: region.monthsToFetch ?? 2
 					};
-					crawlers.push(new DynamicHwaseongCrawler(config));
+					crawlers.push(
+						crawlerType === 'FMCS_RENT_API'
+							? new DynamicFmcsRentCrawler(config)
+							: new DynamicHwaseongCrawler(config)
+					);
 				}
 				break;
 			}
 
 			case 'PLAYWRIGHT':
 			default: {
-				// 미구현 crawlerType(FMCS_API, FMCS_RENT_API)도 여기로 떨어진다 — 파일 상단 TODO 참고
+				// 미구현 crawlerType(FMCS_API)도 여기로 떨어진다 — 파일 상단 TODO 참고
 				// facilityKey로 등록된 Playwright 크롤러 조회 (중복 방지)
 				for (const court of regionCourts) {
 					const key = court.facilityKey;

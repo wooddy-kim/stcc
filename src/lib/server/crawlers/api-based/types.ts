@@ -35,6 +35,17 @@ export interface HwaseongTimeSlot {
 }
 
 /**
+ * FMCS(군포도시공사) place_month_time_state_list 응답 항목
+ */
+export interface FmcsTimeSlot {
+	date: string; // "20261101"
+	start_time: string; // "06:00"
+	end_time: string; // "08:00"
+	use_yn: string; // N=예약가능, Y=예약완료, E=마감
+	rent_no: number; // 0이면 예약 건 없음
+}
+
+/**
  * 월별 코트 ID 매핑
  * 예: { '2025-01': { 10744: 'A', 10743: 'B' }, '2025-02': { 11132: 'A', 11131: 'B' } }
  */
