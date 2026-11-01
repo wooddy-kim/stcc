@@ -18,6 +18,9 @@ vi.mock('../../db/schema.js', () => ({
 import {
 	YonginBaseCrawler,
 	YONGIN_MAX_DAYS_TO_FETCH,
+	YONGIN_FAR_DAYS_PER_RUN,
+	YONGIN_FAR_HORIZON_DAYS,
+	selectYonginDates,
 	resetYonginHealthProbe
 } from '../api-based/yongin-base-crawler';
 import type { YonginFacilityConfig } from '../api-based/types';
@@ -34,9 +37,11 @@ function remainingDaysOfCurrentMonth(): number {
 	return lastDay - now.getDate() + 1;
 }
 
-/** 이번 달만 조회할 때(monthsToFetch=1) 실제로 도는 날짜 수 — 일수 상한에 걸린다 */
+/** 이번 달만 조회할 때(monthsToFetch=1) 실제로 도는 날짜 수 — 가까운 날 전부 + 먼 날 묶음 하나 */
 function fetchedDaysOfCurrentMonth(): number {
-	return Math.min(YONGIN_MAX_DAYS_TO_FETCH, remainingDaysOfCurrentMonth());
+	const remaining = remainingDaysOfCurrentMonth();
+	const far = Math.max(0, remaining - YONGIN_MAX_DAYS_TO_FETCH);
+	return Math.min(YONGIN_MAX_DAYS_TO_FETCH, remaining) + Math.min(YONGIN_FAR_DAYS_PER_RUN, far);
 }
 
 function setMappings() {
@@ -247,9 +252,38 @@ describe('YonginBaseCrawler 요청량 제한', () => {
 			})
 		);
 
-		// monthsToFetch=2 + 두 달치 매핑이 있어도 일수 상한에서 잘려야 한다
+		// monthsToFetch=2 + 두 달치 매핑이 있어도 가까운 날 + 먼 날 묶음 하나로 잘려야 한다
 		await new TestYonginCrawler(2).crawl();
 
-		expect(dates.size).toBe(YONGIN_MAX_DAYS_TO_FETCH);
+		expect(dates.size).toBe(YONGIN_MAX_DAYS_TO_FETCH + YONGIN_FAR_DAYS_PER_RUN);
+	});
+});
+
+describe('selectYonginDates 가까운 날·먼 날 분할', () => {
+	const dates = Array.from({ length: 45 }, (_, i) => `d${String(i).padStart(2, '0')}`);
+	const quarter = 15 * 60_000;
+
+	it('가까운 날은 매 회차 전부, 먼 날은 묶음 하나만 고른다', () => {
+		const picked = selectYonginDates(dates, 0);
+		expect(picked.slice(0, YONGIN_MAX_DAYS_TO_FETCH)).toEqual(
+			dates.slice(0, YONGIN_MAX_DAYS_TO_FETCH)
+		);
+		expect(picked).toHaveLength(YONGIN_MAX_DAYS_TO_FETCH + YONGIN_FAR_DAYS_PER_RUN);
+	});
+
+	it('연속 회차를 돌면 수평선 안의 먼 날을 빠짐없이 덮고, 그 너머는 고르지 않는다', () => {
+		const far = dates.slice(YONGIN_MAX_DAYS_TO_FETCH, YONGIN_FAR_HORIZON_DAYS);
+		const runs = Math.ceil(far.length / YONGIN_FAR_DAYS_PER_RUN);
+		const seen = new Set<string>();
+		for (let k = 0; k < runs; k++) {
+			for (const d of selectYonginDates(dates, k * quarter).slice(YONGIN_MAX_DAYS_TO_FETCH)) {
+				seen.add(d);
+			}
+		}
+		expect([...seen].sort()).toEqual(far);
+	});
+
+	it('먼 날이 없으면 가까운 날만', () => {
+		expect(selectYonginDates(dates.slice(0, 10), 0)).toEqual(dates.slice(0, 10));
 	});
 });

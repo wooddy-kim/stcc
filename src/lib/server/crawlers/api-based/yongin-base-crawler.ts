@@ -31,6 +31,31 @@ const yonginRequestLimiter = createLimiter(
 // 이 패턴이었다. 일수로 직접 묶어 매핑이 몇 달치 있든 요청량이 일정하게 유지된다.
 export const YONGIN_MAX_DAYS_TO_FETCH = 14;
 
+// 먼 날짜(15일째~YONGIN_FAR_HORIZON_DAYS일째)는 회차마다 YONGIN_FAR_DAYS_PER_RUN일씩
+// 돌아가며 수집한다. 요청량은 회차당 2일치(약 15%)만 늘고, 먼 날짜 전체는 약 2시간마다
+// 한 바퀴 갱신된다. 저장이 upsert라 이번 회차에 안 돈 날짜의 데이터는 그대로 남는다.
+// 2시간 주기는 /api/reservations의 신선도 기준(24시간)보다 충분히 짧아야 한다.
+export const YONGIN_FAR_HORIZON_DAYS = 31;
+export const YONGIN_FAR_DAYS_PER_RUN = 2;
+// 크론 주기(15분)와 같게 잡아 연속 회차가 서로 다른 묶음을 돈다
+const YONGIN_FAR_ROTATE_MS = 15 * 60_000;
+
+/**
+ * 오늘부터 이어지는 날짜 목록에서 이번 회차에 조회할 날짜를 고른다.
+ * 가까운 YONGIN_MAX_DAYS_TO_FETCH일은 전부, 그 뒤는 시각에 따라 돌아가는 묶음 하나만.
+ */
+export function selectYonginDates(dates: string[], nowMs: number = Date.now()): string[] {
+	const near = dates.slice(0, YONGIN_MAX_DAYS_TO_FETCH);
+	const far = dates.slice(YONGIN_MAX_DAYS_TO_FETCH, YONGIN_FAR_HORIZON_DAYS);
+	if (far.length === 0) return near;
+
+	const per = Math.min(YONGIN_FAR_DAYS_PER_RUN, far.length);
+	const start = (Math.floor(nowMs / YONGIN_FAR_ROTATE_MS) * per) % far.length;
+	// 끝을 넘으면 앞으로 감아 매 회차 같은 일수를 돈다
+	const picked = Array.from({ length: per }, (_, i) => far[(start + i) % far.length]);
+	return [...near, ...picked];
+}
+
 // 헬스 게이트 — 이미 차단된 상태에서 수백 요청을 더 던지면 차단이 연장된다.
 // 크롤 전에 단건으로 살아있는지 확인하고, 응답이 없으면 그 회차를 통째로 건너뛴다.
 // origin 단위로 한 번만 검사해 21개 크롤러가 결과를 공유한다(요청은 정확히 1건).
@@ -554,7 +579,7 @@ export abstract class YonginBaseCrawler extends ApiBaseCrawler {
 
 	/**
 	 * 오늘부터 N개월치 날짜 배열 생성 (YYYYMMDD)
-	 * 단 YONGIN_MAX_DAYS_TO_FETCH일까지만 자른다 — 요청량 상한이 곧 차단 회피다.
+	 * 단 가까운 날 전부 + 먼 날 묶음 하나로 자른다(selectYonginDates) — 요청량 상한이 곧 차단 회피다.
 	 */
 	private generateDates(months: number): string[] {
 		const dates: string[] = [];
@@ -573,6 +598,6 @@ export abstract class YonginBaseCrawler extends ApiBaseCrawler {
 			}
 		}
 
-		return dates.slice(0, YONGIN_MAX_DAYS_TO_FETCH);
+		return selectYonginDates(dates);
 	}
 }
