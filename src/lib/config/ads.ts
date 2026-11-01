@@ -10,7 +10,7 @@
  * `2783820551`(contentList.inArticle / contentDetail.top / courtDetail.afterHero)과
  * `3494662801`(contentDetail.bottom / courtDetail.afterInfo)은 의도적으로 공유한다.
  * 서로 **다른 페이지**라 노출 손실이 없고, 페이지별 성과 분리는 유보한 결정이다.
- * glossary·faq도 같은 이유로 기존 슬롯을 재사용한다. 성과를 분리하려면 콘솔에서 새 단위를 만들어 교체한다.
+ * glossary·faq·region도 같은 이유로 기존 슬롯을 재사용한다. 성과를 분리하려면 콘솔에서 새 단위를 만들어 교체한다.
  */
 export const AD_SLOTS = {
 	home: {
@@ -37,6 +37,9 @@ export const AD_SLOTS = {
 		inListLower: '4696063838'
 	},
 	faq: {
+		afterList: '3494662801'
+	},
+	region: {
 		afterList: '3494662801'
 	},
 	stats: {
