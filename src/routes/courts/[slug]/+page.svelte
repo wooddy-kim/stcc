@@ -7,6 +7,7 @@
 	import SanitizedHtml from '$lib/components/SanitizedHtml.svelte';
 	import AdSenseBanner from '$lib/components/ads/AdSenseBanner.svelte';
 	import { AD_SLOTS } from '$lib/config/ads';
+	import { courtSeo } from '$lib/utils/court-seo';
 
 	export let data: PageData;
 
@@ -29,8 +30,7 @@
 	}
 
 	// SEO metadata
-	const pageTitle = `${court.name} - 예약 현황 및 상세 안내 | CourtNow`;
-	const pageDescription = `${court.name} - 수도권 공공 테니스장. ${court.address || ''} 위치, ${court.totalCourts}개 코트 운영 중. 예약 방법 및 이용 안내를 확인하세요.`;
+	const { title: pageTitle, description: pageDescription } = courtSeo(court);
 	const canonicalUrl = `https://courtnow.info/courts/${court.slug}`;
 </script>
 
