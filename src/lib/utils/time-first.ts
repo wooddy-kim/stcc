@@ -11,10 +11,10 @@ export const CHIP_HOURS: readonly number[] = [6, 8, 10, 12, 14, 16, 18, 20];
 export const BAR_HOURS: readonly number[] = Array.from({ length: 16 }, (_, i) => 6 + i);
 /**
  * 날짜를 앞으로 넘길 수 있는 최대 일수.
- * 용인 크롤러가 오늘부터 YONGIN_MAX_DAYS_TO_FETCH(14)일 = 오늘~13일 뒤까지만 수집하므로 맞춘다.
- * 더 넘기면 용인 전 코트가 "정보 없음"으로 보인다.
+ * 용인 크롤러의 먼 날 수집 범위(YONGIN_FAR_HORIZON_DAYS = 31일 = 오늘~30일 뒤)에 맞춘다.
+ * 코트마다 예약 창이 달라 뒤쪽은 비기 쉬우므로, 시간표는 수집된 마지막 날까지만 그린다(timetableDays).
  */
-export const MAX_DAYS_AHEAD = 13;
+export const MAX_DAYS_AHEAD = 30;
 
 export interface KstNow {
 	/** 'YYYY-MM-DD' */
@@ -235,11 +235,14 @@ export function timetableDays<S extends Slot & { day: string }>(
 	now: KstNow,
 	count: number
 ): TimetableDay<S>[] {
-	return Array.from({ length: count }, (_, i) => {
+	const days = Array.from({ length: count }, (_, i) => {
 		const day = addDays(now.date, i);
 		const own = rows.filter((r) => r.day === day);
 		return { day, slots: openSlots(own, day, now), reported: own.length > 0 };
 	});
+	// 예약 창이 짧은 코트가 뒤쪽을 "예약 정보 없음"으로 길게 채우지 않게 자른다
+	while (days.length > 0 && !days[days.length - 1].reported) days.pop();
+	return days;
 }
 
 export interface BarBlock {

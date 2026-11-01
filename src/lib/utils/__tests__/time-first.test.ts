@@ -178,8 +178,8 @@ describe('수집 정보 없음 구분', () => {
 		status: 'available',
 		availableCourts: '1'
 	});
-	it('MAX_DAYS_AHEAD는 용인 크롤러 수집 범위(오늘~13일 뒤)와 같다', () => {
-		expect(MAX_DAYS_AHEAD).toBe(13);
+	it('MAX_DAYS_AHEAD는 용인 크롤러 먼 날 수집 범위(오늘~30일 뒤)와 같다', () => {
+		expect(MAX_DAYS_AHEAD).toBe(30);
 	});
 	it('timetableDays: 날짜별 남은 슬롯과 수집 여부', () => {
 		const now = { date: '2026-10-25', minutes: 15 * 60 };
@@ -188,10 +188,24 @@ describe('수집 정보 없음 구분', () => {
 			{ ...s(1, '08:00', '10:00'), day: '2026-10-26', status: 'reserved' }
 		];
 		const days = timetableDays(rows, now, 3);
+		// 수집되지 않은 뒤쪽 날짜(10-27)는 잘린다
 		expect(days.map((d) => [d.day, d.slots.length, d.reported])).toEqual([
 			['2026-10-25', 0, true],
-			['2026-10-26', 0, true],
-			['2026-10-27', 0, false]
+			['2026-10-26', 0, true]
+		]);
+	});
+
+	it('timetableDays: 중간에 빈 날은 남기고 뒤쪽 빈 날만 자른다', () => {
+		const now = { date: '2026-10-25', minutes: 15 * 60 };
+		const rows = [
+			{ ...s(1, '14:00', '16:00'), day: '2026-10-25' },
+			{ ...s(1, '14:00', '16:00'), day: '2026-10-27' }
+		];
+		const days = timetableDays(rows, now, 5);
+		expect(days.map((d) => [d.day, d.reported])).toEqual([
+			['2026-10-25', true],
+			['2026-10-26', false],
+			['2026-10-27', true]
 		]);
 	});
 });
