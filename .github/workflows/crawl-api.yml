@@ -1,10 +1,11 @@
-name: Crawl API (용인·화성·군포·의왕·남양주·안산)
+name: Crawl API (용인·화성·군포·의왕·남양주)
 
 # 망포(Playwright)는 Vercel /api/cron/crawl-mangpo에 남고, 여기서는 API 크롤러만 돈다.
 # 실행은 cron-job.org가 GitHub API(workflow_dispatch)로 건다. Actions schedule은
 # 몰리면 건너뛰어서 쓰지 않는다. 다시 넣으면 외부 호출과 겹쳐 용인 요청이 늘어난다.
 # 예약: 매시 7·22·37·52분 + 매일 KST 09:02(09:00 취소분 풀린 직후).
-# 1회 약 900요청(용인 약 670, 남양주 114, 군포·의왕 42, 안산 40)이라 용인 부하를 생각해 더 줄이지 않는다.
+# 1회 약 960요청(용인 약 770, 남양주 114, 군포·의왕 42)이라 용인 부하를 생각해 더 줄이지 않는다.
+# 안산(ANSAN_API)은 GitHub 러너에서 HTTP 404(해외 IP 차단 추정)라 넣지 않는다. 코트도 비활성화해 둠.
 # cron-job.org의 예전 Vercel /api/cron/crawl-api 잡은 Vercel 무료 사용량을 넘겨서 꺼 둔다.
 on:
   workflow_dispatch:
@@ -31,4 +32,4 @@ jobs:
       - name: Run crawlers
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npm run crawl -- HWASEONG_API YONGIN_API FMCS_RENT_API NAMYANGJU_API ANSAN_API
+        run: npm run crawl -- HWASEONG_API YONGIN_API FMCS_RENT_API NAMYANGJU_API
